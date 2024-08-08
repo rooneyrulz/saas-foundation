@@ -6,6 +6,9 @@ from visits.models import PageVisit
 this_dir = pathlib.Path(__file__).resolve().parent
 
 def home_page_view(request, *args, **kwargs):
+    return about_page_view(request, *args, **kwargs)
+
+def about_page_view(request, *args, **kwargs):
     query_set = PageVisit.objects.all()
     html_template = 'home.html'
     context = {
